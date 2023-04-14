@@ -63,6 +63,50 @@
             break;
     }
     echo "<hr>";
+    //判斷平/閏年
+    $year=2000;
+    if($year%4==0){
+        if($year%100==0){
+            if($year%400==0){
+                echo "閏年";
+            }else{
+                echo "平年";
+            }
+        }else{
+            echo "閏年";
+        }
+    }else{
+        echo "平年";
+    }
+    echo "<hr>";
+    //for數列
+    $n=23;
+    for($i=1;$i<=ceil(($n+1)/2);$i++){
+        if($i>1) echo ",";
+        echo 2*$i-1;
+    }
+    echo "<br>";
+ 
+    for($i=1;$i<=floor($n/10);$i++){
+        if($i>1) echo ",";
+        echo $i*10;
+    }
+    echo "<br>";
+
+    for($i=3;$i<100;$i++){
+        $num=true;
+        
+        for($j=2;$j<$i;$j++){
+            if($i%$j==0)
+                $num=false;
+        }
+        if($num){
+            if($i>3) 
+                echo ",";
+            echo $i;
+        }
+    }
+    echo "<hr>";
     //三角
     for($i=0;$i<=5;$i++){
         for($j=0;$j<$i;$j++){
@@ -82,7 +126,7 @@
     //正三角
     for($i=1;$i<=5;$i++){
         for($j=0;$j<5-$i;$j++)
-            echo "a";
+            echo "&nbsp&nbsp";
         for($k=0;$k<$i*2-1;$k++){
             echo "*";
         }
@@ -91,7 +135,7 @@
     echo "<hr>";
     for($i=1;$i<=5;$i++){
         for($j=0;$j<5-$i;$j++)
-            echo "a";
+            echo "&nbsp&nbsp";
         for($k=0;$k<$i*2-1;$k++){
             echo "*";
         }
@@ -99,12 +143,12 @@
     }
     for($i=1;$i<=4;$i++){
         for($j=0;$j<$i;$j++)
-            echo "a";
+            echo '&nbsp&nbsp';
         for($k=1;$k<10-$i*2;$k++){
             echo "*";
         }
         echo "<br>";
     }
     echo "<hr>";
-
+    
 ?>
