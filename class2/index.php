@@ -29,6 +29,40 @@
             break;
     }
     echo "<hr>";
+    //
+    $score=100;
+    echo "成績="."$score<br>";
+    if($score<60){
+        $level='E';
+    }else if($score<70){
+        $level='D';
+
+    }else if($score<80){
+        $level='C';
+    }else if($score<90){
+        $level='B';
+    }else{
+        $level='A';
+    }
+    echo "level=$level<br>";
+    switch ($level) {
+        case 'A':
+            echo "表現優良，請繼續保持";
+            break;
+        case 'B':
+            echo "值得鼓勵，還有進步空間";
+            break;
+        case 'C':
+            echo "需要更多練習";
+            break;
+        case 'D':
+            echo "需要加強基本功";
+            break;
+        default:
+            echo "是否無心學業?";    
+            break;
+    }
+    echo "<hr>";
     //三角
     for($i=0;$i<=5;$i++){
         for($j=0;$j<$i;$j++){
