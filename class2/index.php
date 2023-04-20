@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
 </head>
 <body>
     
@@ -136,7 +141,7 @@
         echo "<tr>";
         for($j=1;$j<=9;$j++){
             $k=$i*$j;
-            echo "<td style=\"border:1px solid;width:70px\">";
+            echo "<td style=\"border:1px solid;width:100px\">";
             echo "$j x $i = $k";
             echo "</td>";
         }
@@ -178,7 +183,7 @@
             if($i==0){
                 echo "<td style=\"border:1px solid;background-color:#ccc; width:15px;\">";
                 if($j==0)
-                    echo "&nbsp";
+                    echo "&nbsp;";
                 else
                     echo "$j";
             }
@@ -193,7 +198,7 @@
                     echo "</td>";
                 }else{
                     echo "<td style=\"border:1px solid\">";
-                    echo "&nbsp";
+                    echo "&nbsp;";
                     echo "</td>";
                 }
             }
@@ -226,7 +231,7 @@
     $n=10;//調整n可以改變大小
     for($i=1;$i<=$n;$i++){
         for($j=0;$j<$n-$i;$j++)
-            echo "&nbsp&nbsp";
+            echo "&nbsp;";
         for($k=0;$k<$i*2-1;$k++){
             echo "*";
         }
@@ -239,7 +244,7 @@
     $n=2*$n+1;
     for($i=1;$i<=($n/2)+1;$i++){
         for($j=0;$j<(($n/2)-$i);$j++)
-            echo "&nbsp&nbsp";
+            echo "&nbsp;";
         for($k=0;$k<$i*2-1;$k++){
             echo "*";
         }
@@ -247,7 +252,7 @@
     }
     for($i=1;$i<=($n/2);$i++){
         for($j=0;$j<$i;$j++)
-            echo '&nbsp&nbsp';
+            echo '&nbsp;';
         for($k=1;$k<$n+1-$i*2;$k++){
             echo "*";
         }
@@ -264,7 +269,7 @@
                     echo "*";
                 }
                 else
-                    echo "&nbsp&nbsp";
+                    echo "&nbsp;";
             }
             else echo "*";
         }
@@ -283,7 +288,7 @@
                     echo "*";
                 }
                 else{
-                    echo "&nbsp&nbsp";
+                    echo "&nbsp;";
                 }
             }
         }
@@ -304,7 +309,7 @@
     for($i=1;$i<=$n;$i++){
         for($j=1;$j<=$n*2;$j++){
             if($j<$i||$j>($n*2-$i))
-                echo "&nbsp&nbsp";
+                echo "&nbsp;";
                 else
                 echo "*";
         }
@@ -320,7 +325,7 @@
                 echo "*";
             }
             else{
-                echo "&nbsp&nbsp";
+                echo "&nbsp;";
             }
         }
         echo "<br>";
@@ -330,7 +335,7 @@
             if($j==$i+1||$j==($n*2-1-$i))
                 echo "*";
             else{
-                echo "&nbsp&nbsp";
+                echo "&nbsp;";
             }
         }
         echo "<br>";
@@ -348,7 +353,7 @@
                 if($i==$n||$j==$n)
                 echo "*";
                 else
-                echo "&nbsp&nbsp";
+                echo "&nbsp;";
             }
         }
         echo "<br>";
@@ -361,7 +366,7 @@
                 if($j==$n)
                 echo "*";
                 else
-                echo "&nbsp&nbsp";
+                echo "&nbsp;";
             }
         }
         echo "<br>";
