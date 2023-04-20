@@ -133,6 +133,8 @@
         echo "<br>";
     }
     echo "<hr>";
+
+    //菱形
     for($i=1;$i<=5;$i++){
         for($j=0;$j<5-$i;$j++)
             echo "&nbsp&nbsp";
@@ -149,6 +151,21 @@
         }
         echo "<br>";
     }
+
     echo "<hr>";
-    
+    //矩型1
+    for($i=1;$i<=7;$i++){
+        for($j=1;$j<=7;$j++){
+            if($j>1&&$j<7){
+                if($i==1||$i==7){
+                    echo "*";
+                }
+                else
+                    echo "&nbsp&nbsp";
+            }
+            else echo "*";
+        }
+        echo "<br>";
+    }
+      
 ?>
