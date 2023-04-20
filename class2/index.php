@@ -64,7 +64,15 @@
     }
     echo "<hr>";
     //判斷平/閏年
+    echo "<ul>";
+    echo "<li>公元年分除以4不可整除，為平年。 <br>n%4==0 閏年</li>";
+    echo "<li>公元年分除以4可整除但除以100不可整除，為閏年。<br>n%4==0&&n%100!=0閏年</li>";
+    echo "<li>公元年分除以100可整除但除以400不可整除，為平年。<br>n%100==0&&n%400!=0平年<br>n%100!=0||n%400==0閏年</li>";
+    echo "<li>n%4==0&&n%100!=0||n%400==0閏年</li>";
+    echo "<li>n%4!=0||n%100==0&&n%400!=0平年</li>";
+    echo "</ul>";
     $year=2000;
+    echo "$year 是";
     if($year%4==0){
         if($year%100==0){
             if($year%400==0){
@@ -78,6 +86,7 @@
     }else{
         echo "平年";
     }
+
     echo "<hr>";
     //for數列
     $n=23;
@@ -115,8 +124,8 @@
         echo "<tr>";
         for($j=1;$j<=9;$j++){
             $k=$i*$j;
-            echo "<td style=\"border:1px solid\">";
-            echo "$j x $i= $k";
+            echo "<td style=\"border:1px solid;width:70px\">";
+            echo "$j x $i = $k";
             echo "</td>";
         }
         echo "</tr>";
@@ -228,4 +237,3 @@
         }
         echo "<br>";
     }
-?>
