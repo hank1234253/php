@@ -103,7 +103,13 @@
     }else{
         echo "平年";
     }
-
+    /*
+    if($year%4==0&&$year%100!=0||$year%400==0){
+        echo "閏年";
+    }else{
+        echo "平年";
+    }
+    */
     echo "<hr>";
     //for數列
     $n=23;
@@ -174,6 +180,7 @@
         }
         echo "</tr>";
     }
+    //特別九九
     echo "</table>";
     echo "<hr>";
     echo "<table style=\"border:1px solid;text-align:center; border-collapse:collapse\">";
@@ -207,8 +214,10 @@
     }
     echo "</table>";
     echo "<hr>";
-    //特別九九
-
+    //while尋找字元
+    
+    
+    echo "<hr>";
     //三角
     $n=10;//調整n可以改變大小
     for($i=0;$i<=$n;$i++){
@@ -237,8 +246,8 @@
         }
         echo "<br>";
     }
-    echo "<hr>";
 
+    echo "<hr>";
     //菱形
     $n=5;//調整n可以改變大小
     $n=2*$n+1;
@@ -264,33 +273,29 @@
     $n=15;//調整n可以改變大小
     for($i=1;$i<=$n;$i++){
         for($j=1;$j<=$n;$j++){
-            if($j>1&&$j<$n){
-                if($i==1||$i==$n){
+            if($i==1||$i==$n){
+                echo "*";
+            }else if($j==1||$j==$n){
                     echo "*";
-                }
-                else
+            }else{
                     echo "&nbsp;";
             }
-            else echo "*";
         }
         echo "<br>";
     }
     echo "<hr>";
     //矩形2
-    $n=20;//調整n可以改變大小
+    $n=10;//調整n可以改變大小
     for($i=1;$i<=$n;$i++){
         for($j=1;$j<=$n;$j++){
             if($i==1||$i==$n||$j==1||$j==$n){
                 echo "*";
             }
-            else{
-                if($j==$i||$j==$n+1-$i){
-                    echo "*";
-                }
-                else{
-                    echo "&nbsp;";
-                }
-            }
+            else if($j==$i||$j==$n+1-$i){
+                echo "*";
+            }else{
+                echo "&nbsp;";
+            }  
         }
         echo "<br>";
     }
@@ -310,7 +315,7 @@
         for($j=1;$j<=$n*2;$j++){
             if($j<$i||$j>($n*2-$i))
                 echo "&nbsp;";
-                else
+            else
                 echo "*";
         }
         echo "<br>";
@@ -349,10 +354,10 @@
             if($j==($n+1-$i)||$j==($n-1+$i)){
                 echo "*";
             }
-            else{
-                if($i==$n||$j==$n)
+            else if($i==$n||$j==$n){
                 echo "*";
-                else
+            }
+            else{
                 echo "&nbsp;";
             }
         }
@@ -360,12 +365,11 @@
     }
     for($i=1;$i<=$n-1;$i++){
         for($j=1;$j<=$n*2-1;$j++){
-            if($j==$i+1||$j==($n*2-1-$i))
+            if($j==$i+1||$j==($n*2-1-$i)){
                 echo "*";
-            else{
-                if($j==$n)
+            }else if($j==$n){
                 echo "*";
-                else
+            }else{
                 echo "&nbsp;";
             }
         }
