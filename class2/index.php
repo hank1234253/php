@@ -107,6 +107,49 @@
         }
     }
     echo "<hr>";
+    //九九乘法表
+    //表格
+    echo "<table style=\"border:1px solid;border-collapse:collapse\">";
+
+    for($i=1;$i<=9;$i++){
+        echo "<tr>";
+        for($j=1;$j<=9;$j++){
+            $k=$i*$j;
+            echo "<td style=\"border:1px solid\">";
+            echo "$j x $i= $k";
+            echo "</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
+    echo "<br>";
+
+    //交叉乘法
+    echo "<table style=\"border:1px solid;text-align:center; border-collapse:collapse\">";
+    for($i=0;$i<=9;$i++){
+        echo "<tr>";
+        for($j=0;$j<=9;$j++){
+            if($i==0){
+                echo "<td style=\"border:1px solid;background-color:#ccc; width:15px;\">";
+                if($j==0)
+                    echo "&nbsp";
+                else
+                    echo "$j";
+            }
+            else if($j==0){
+                echo "<td style=\"border:1px solid;background-color:#ccc;\">";
+                echo "$i";
+            }else{
+            $k=$i*$j;
+                echo "<td style=\"border:1px solid\">";
+                echo "$k";
+                echo "</td>";
+            }
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
+    echo "<hr>";
     //三角
     for($i=0;$i<=5;$i++){
         for($j=0;$j<$i;$j++){
