@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
 <?php
     //if...else
     $score=50;
@@ -160,7 +172,8 @@
     echo "</table>";
     echo "<hr>";
     //三角
-    for($i=0;$i<=5;$i++){
+    $n=10;//調整n可以改變大小
+    for($i=0;$i<=$n;$i++){
         for($j=0;$j<$i;$j++){
             echo "*";
         }
@@ -168,7 +181,8 @@
     }
     echo "<hr>";
     //倒三角
-    for($i=5;$i>=0;$i--){
+    $n=10;//調整n可以改變大小
+    for($i=$n;$i>=0;$i--){
         for($j=0;$j<$i;$j++){
             echo "*";
         }
@@ -176,8 +190,9 @@
     }
     echo "<hr>";
     //正三角
-    for($i=1;$i<=5;$i++){
-        for($j=0;$j<5-$i;$j++)
+    $n=10;//調整n可以改變大小
+    for($i=1;$i<=$n;$i++){
+        for($j=0;$j<$n-$i;$j++)
             echo "&nbsp&nbsp";
         for($k=0;$k<$i*2-1;$k++){
             echo "*";
@@ -187,18 +202,20 @@
     echo "<hr>";
 
     //菱形
-    for($i=1;$i<=5;$i++){
-        for($j=0;$j<5-$i;$j++)
+    $n=5;//調整n可以改變大小
+    $n=2*$n+1;
+    for($i=1;$i<=($n/2)+1;$i++){
+        for($j=0;$j<(($n/2)-$i);$j++)
             echo "&nbsp&nbsp";
         for($k=0;$k<$i*2-1;$k++){
             echo "*";
         }
         echo "<br>";
     }
-    for($i=1;$i<=4;$i++){
+    for($i=1;$i<=($n/2);$i++){
         for($j=0;$j<$i;$j++)
             echo '&nbsp&nbsp';
-        for($k=1;$k<10-$i*2;$k++){
+        for($k=1;$k<$n+1-$i*2;$k++){
             echo "*";
         }
         echo "<br>";
@@ -206,10 +223,11 @@
 
     echo "<hr>";
     //矩型1
-    for($i=1;$i<=7;$i++){
-        for($j=1;$j<=7;$j++){
-            if($j>1&&$j<7){
-                if($i==1||$i==7){
+    $n=15;//調整n可以改變大小
+    for($i=1;$i<=$n;$i++){
+        for($j=1;$j<=$n;$j++){
+            if($j>1&&$j<$n){
+                if($i==1||$i==$n){
                     echo "*";
                 }
                 else
@@ -221,13 +239,14 @@
     }
     echo "<hr>";
     //矩形2
-    for($i=1;$i<=7;$i++){
-        for($j=1;$j<=7;$j++){
-            if($i==1||$i==7||$j==1||$j==7){
+    $n=20;//調整n可以改變大小
+    for($i=1;$i<=$n;$i++){
+        for($j=1;$j<=$n;$j++){
+            if($i==1||$i==$n||$j==1||$j==$n){
                 echo "*";
             }
             else{
-                if($j==$i||$j==8-$i){
+                if($j==$i||$j==$n+1-$i){
                     echo "*";
                 }
                 else{
@@ -237,3 +256,86 @@
         }
         echo "<br>";
     }
+    echo "<hr>";
+    //倒三角
+    $n=10;//調整n可以改變大小
+    for($i=$n;$i>0;$i--){
+        for($j=0;$j<$i;$j++){
+            echo "*";
+        }
+        echo "<br>";
+    }
+    echo "<hr>";
+    //倒正三角
+    $n=10;//調整n可以改變大小
+    for($i=1;$i<=$n;$i++){
+        for($j=1;$j<=$n*2;$j++){
+            if($j<$i||$j>($n*2-$i))
+                echo "&nbsp&nbsp";
+                else
+                echo "*";
+        }
+        echo "<br>";
+    }
+    echo "<hr>";
+    //空菱形
+    $n=2;//調整n可以改變大小
+    $n=2*$n+1;
+    for($i=1;$i<=$n;$i++){
+        for($j=1;$j<=2*$n-1;$j++){
+            if($j==($n+1-$i)||$j==($n-1+$i)){
+                echo "*";
+            }
+            else{
+                echo "&nbsp&nbsp";
+            }
+        }
+        echo "<br>";
+    }
+    for($i=1;$i<=$n-1;$i++){
+        for($j=1;$j<=$n*2-1;$j++){
+            if($j==$i+1||$j==($n*2-1-$i))
+                echo "*";
+            else{
+                echo "&nbsp&nbsp";
+            }
+        }
+        echo "<br>";
+    }
+    echo "<hr>";
+    //對角線菱形
+    $n=5;//調整n可以改變大小
+    $n=2*$n+1;
+    for($i=1;$i<=$n;$i++){
+        for($j=1;$j<=2*$n-1;$j++){
+            if($j==($n+1-$i)||$j==($n-1+$i)){
+                echo "*";
+            }
+            else{
+                if($i==$n||$j==$n)
+                echo "*";
+                else
+                echo "&nbsp&nbsp";
+            }
+        }
+        echo "<br>";
+    }
+    for($i=1;$i<=$n-1;$i++){
+        for($j=1;$j<=$n*2-1;$j++){
+            if($j==$i+1||$j==($n*2-1-$i))
+                echo "*";
+            else{
+                if($j==$n)
+                echo "*";
+                else
+                echo "&nbsp&nbsp";
+            }
+        }
+        echo "<br>";
+    }
+
+?>
+
+</body>
+</html>
+
