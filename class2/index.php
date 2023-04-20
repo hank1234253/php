@@ -144,7 +144,7 @@
     }
     echo "</table>";
     echo "<br>";
-
+    echo "<hr>";
     //交叉乘法
     echo "<table style=\"border:1px solid;text-align:center; border-collapse:collapse\">";
     for($i=0;$i<=9;$i++){
@@ -171,6 +171,39 @@
     }
     echo "</table>";
     echo "<hr>";
+    echo "<table style=\"border:1px solid;text-align:center; border-collapse:collapse\">";
+    for($i=0;$i<=9;$i++){
+        echo "<tr>";
+        for($j=0;$j<=9;$j++){
+            if($i==0){
+                echo "<td style=\"border:1px solid;background-color:#ccc; width:15px;\">";
+                if($j==0)
+                    echo "&nbsp";
+                else
+                    echo "$j";
+            }
+            else if($j==0){
+                echo "<td style=\"border:1px solid;background-color:#ccc;\">";
+                echo "$i";
+            }else{
+                if($i>=$j){
+                    $k=$i*$j;
+                    echo "<td style=\"border:1px solid\">";
+                    echo "$k";
+                    echo "</td>";
+                }else{
+                    echo "<td style=\"border:1px solid\">";
+                    echo "&nbsp";
+                    echo "</td>";
+                }
+            }
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
+    echo "<hr>";
+    //特別九九
+
     //三角
     $n=10;//調整n可以改變大小
     for($i=0;$i<=$n;$i++){
@@ -304,7 +337,7 @@
     }
     echo "<hr>";
     //對角線菱形
-    $n=5;//調整n可以改變大小
+    $n=3;//調整n可以改變大小
     $n=2*$n+1;
     for($i=1;$i<=$n;$i++){
         for($j=1;$j<=2*$n-1;$j++){
