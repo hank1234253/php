@@ -31,10 +31,12 @@
     $test = [
         'a' => [
             [
-                'a', 'b'
+                'a', 
+                'b'
             ],
             [
-                'c', 'd'
+                'c', 
+                'd'
             ]
         ],
         'b'=>[
@@ -57,7 +59,17 @@
     echo "<br>";
     echo $test['a'][1][1];
     echo "<br>";
+    if(is_array($test)){
+        echo '$test是陣列<br>';
+    }else{
+        echo '$test不是陣列<br>';
+    }
 
+    if(in_array("c",$test['a'][1])){
+        echo '在陣列中';
+    }else{
+        echo '不在陣列中';
+    }
     ?>
 </body>
 
