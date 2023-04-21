@@ -7,9 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        table,td{
+        table,
+        td {
             border: 1px solid #ccc;
             border-collapse: collapse;
+        }
+
+        .game1 {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            border: 1px solid;
+            border-radius: 50%;
+            background-color: lightgreen;
+            margin: 5px;
+        }
+
+        .game2 {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            border: 1px solid;
+            border-radius: 50%;
+            background-color: orange;
+            margin: 5px;
         }
     </style>
 </head>
@@ -141,13 +166,13 @@
 
     //序列化與反序列化
     echo "序列化與反序列化<br>";
-    $en=["a","b","c","d","e"];
+    $en = ["a", "b", "c", "d", "e"];
     echo "<pre>";
     print_r($en);
     echo "</pre>";
-    $en=serialize($en);
+    $en = serialize($en);
     echo $en;
-    $en=unserialize($en);
+    $en = unserialize($en);
     echo "<pre>";
     print_r($en);
     echo "</pre>";
@@ -155,9 +180,9 @@
 
     //陣列拆分成字串 字串合成陣列
     echo "陣列拆分成字串 字串合成陣列<br>";
-    $en=implode(',',$en);
+    $en = implode(',', $en);
     echo $en;
-    $en=explode(",",$en);
+    $en = explode(",", $en);
     echo "<pre>";
     print_r($en);
     echo "</pre>";
@@ -165,41 +190,41 @@
 
     //學生成績陣列
     echo "學生成績陣列2種寫法";
-    $students=[
-        "judy"=>[
-            "國文"=>95,
-            "英文"=>64,
-            "數學"=>70,
-            "地理"=>90,
-            "歷史"=>84
+    $students = [
+        "judy" => [
+            "國文" => 95,
+            "英文" => 64,
+            "數學" => 70,
+            "地理" => 90,
+            "歷史" => 84
         ],
-        "amo"=>[
-            "國文"=>88,
-            "英文"=>78,
-            "數學"=>54,
-            "地理"=>81,
-            "歷史"=>71
+        "amo" => [
+            "國文" => 88,
+            "英文" => 78,
+            "數學" => 54,
+            "地理" => 81,
+            "歷史" => 71
         ],
-        "john"=>[
-            "國文"=>45,
-            "英文"=>60,
-            "數學"=>68,
-            "地理"=>70,
-            "歷史"=>62
+        "john" => [
+            "國文" => 45,
+            "英文" => 60,
+            "數學" => 68,
+            "地理" => 70,
+            "歷史" => 62
         ],
-        "peter"=>[
-            "國文"=>59,
-            "英文"=>32,
-            "數學"=>77,
-            "地理"=>54,
-            "歷史"=>42
+        "peter" => [
+            "國文" => 59,
+            "英文" => 32,
+            "數學" => 77,
+            "地理" => 54,
+            "歷史" => 42
         ],
-        "hebe"=>[
-            "國文"=>71,
-            "英文"=>62,
-            "數學"=>80,
-            "地理"=>62,
-            "歷史"=>64
+        "hebe" => [
+            "國文" => 71,
+            "英文" => 62,
+            "數學" => 80,
+            "地理" => 62,
+            "歷史" => 64
         ]
     ];
     echo "<pre>";
@@ -208,41 +233,41 @@
     //              名字    科別
     echo $students["judy"]["國文"];
 
-    $subjects=[
-        "國文"=>[
-            "judy"=>95,
-            "amo"=>88,
-            "john"=>45,
-            "peter"=>59,
-            "hebe"=>71
+    $subjects = [
+        "國文" => [
+            "judy" => 95,
+            "amo" => 88,
+            "john" => 45,
+            "peter" => 59,
+            "hebe" => 71
         ],
-        "英文"=>[
-            "judy"=>64,
-            "amo"=>78,
-            "john"=>60,
-            "peter"=>32,
-            "hebe"=>62
+        "英文" => [
+            "judy" => 64,
+            "amo" => 78,
+            "john" => 60,
+            "peter" => 32,
+            "hebe" => 62
         ],
-        "數學"=>[
-            "judy"=>70,
-            "amo"=>54,
-            "john"=>68,
-            "peter"=>77,
-            "hebe"=>80
+        "數學" => [
+            "judy" => 70,
+            "amo" => 54,
+            "john" => 68,
+            "peter" => 77,
+            "hebe" => 80
         ],
-        "地理"=>[
-            "judy"=>90,
-            "amo"=>81,
-            "john"=>70,
-            "peter"=>54,
-            "hebe"=>62
+        "地理" => [
+            "judy" => 90,
+            "amo" => 81,
+            "john" => 70,
+            "peter" => 54,
+            "hebe" => 62
         ],
-        "歷史"=>[
-            "judy"=>84,
-            "amo"=>71,
-            "john"=>62,
-            "peter"=>42,
-            "hebe"=>64
+        "歷史" => [
+            "judy" => 84,
+            "amo" => 71,
+            "john" => 62,
+            "peter" => 42,
+            "hebe" => 64
         ],
     ];
     echo "<pre>";
@@ -257,7 +282,7 @@
     echo "<tr><td></td><td>國文</td><td>英文</td><td>數學</td><td>地理</td><td>歷史</td>";
     foreach ($students as $name => $scores) {
         echo "<tr><td>$name</td>";
-        foreach($scores as $sub =>$sco){
+        foreach ($scores as $sub => $sco) {
             echo "<td>$sco</td>";
         }
         echo "</tr>";
@@ -266,10 +291,10 @@
     echo "<hr>";
     //陣列九九乘法表
     echo "陣列九九乘法表<br>";
-    for($i=1;$i<10;$i++){
-        for($j=1;$j<10;$j++){
-            $num1[]=$i." x ".$j." = ".$i*$j;
-            $num2[$i][$j]=$i." x ".$j." = ".$i*$j;
+    for ($i = 1; $i < 10; $i++) {
+        for ($j = 1; $j < 10; $j++) {
+            $num1[] = $i . " x " . $j . " = " . $i * $j;
+            $num2[$i][$j] = $i . " x " . $j . " = " . $i * $j;
         }
     }
     echo "一維<br>";
@@ -277,13 +302,13 @@
     print_r($num1);
     echo "</pre>";
     echo "<table>";
-    foreach ($num1 as $k=> $value ){
-        if($k%9==0)
+    foreach ($num1 as $k => $value) {
+        if ($k % 9 == 0)
             echo "<tr>";
         echo "<td>";
         echo $value;
         echo "</td>";
-        if($k%9==8)
+        if ($k % 9 == 8)
             echo "</tr>";
     }
     echo "</table>";
@@ -295,9 +320,9 @@
     echo "<table>";
     foreach ($num2 as $i => $j) {
         echo "<tr>";
-         foreach ($j as $k => $value) {
+        foreach ($j as $k => $value) {
             echo "<td>";
-            echo  $value." ";
+            echo  $value . " ";
             echo "</td>";
         }
         echo "</tr>";
@@ -306,32 +331,110 @@
     echo "<hr>";
     //威力彩選號
     echo "威力彩選號<br>";
-    $game=[];
-    while(count($game)<6){
-        $tmp=rand(1,38); 
-        if(!in_array($tmp,$game)){
-            $game[]=$tmp;
+    $game = [];
+    while (count($game) < 6) {
+        $tmp = rand(1, 38);
+        if (!in_array($tmp, $game)) {
+            $game[] = $tmp;
         }
     }
-    sort($game);    
+    sort($game);
     echo "<pre>";
     print_r($game);
     echo "</pre>";
+    foreach ($game as $value) {
+        echo "<div class=\"game1\">$value</div>";
+    }
+    $tmp = rand(1, 8);
+    echo "<br><div class=\"game2\">$tmp</div>";
     echo "<hr>";
     //找出五百年內的閏年
     echo "找出五百年內的閏年<br>";
-    $year500=[];
-    for($i=1;$i<=500;$i++){
-        if($i%4==0&&$i%100!=0||$i%400==0){
-            $year500[]=$i;
+    $year500 = [];
+    for ($i = 2023; $i <= 2523; $i++) {
+        if ($i % 4 == 0 && $i % 100 != 0 || $i % 400 == 0) {
+            $year500[] = $i;
         }
     }
     echo "<pre>";
     print_r($year500);
     echo "</pre>";
-    
+    echo "<hr>";
+    //天干地支年
+    echo "天干地支<br>";
+    $n=1026;
+    switch ($n % 10) {
+        case '0':
+            echo "庚";
+            break;
+        case '1':
+            echo "辛";
+            break;
+        case '2':
+            echo "壬";
+            break;
+        case '3':
+            echo "癸";
+            break;
+        case '4':
+            echo "甲";
+            break;
+        case '5':
+            echo "乙";
+            break;
+        case '6':
+            echo "丙";
+            break;
+        case '7':
+            echo "丁";
+            break;
+        case '8':
+            echo "戊";
+            break;
+        case '9':
+            echo "己";
+            break;
+    }
+    switch ($n % 12) {
+        case '0':
+            echo "申";
+            break;
+        case '1':
+            echo "酉";
+            break;
+        case '2':
+            echo "戌";
+            break;
+        case '3':
+            echo "亥";
+            break;
+        case '4':
+            echo "子";
+            break;
+        case '5':
+            echo "丑";
+            break;
+        case '6':
+            echo "寅";
+            break;
+        case '7':
+            echo "卯";
+            break;
+        case '8':
+            echo "辰";
+            break;
+        case '9':
+            echo "巳";
+            break;
+        case '10':
+            echo "午";
+            break;
+        case '11':
+            echo "未";
+            break;
+    }
     ?>
-    
+
 </body>
 
 </html>
