@@ -433,6 +433,22 @@
             echo "未";
             break;
     }
+    echo "<hr>";
+
+    //陣列元素反轉
+    echo "陣列元素反轉";
+    $array=[1,2,3,4,5,6,7];
+    echo "<pre>";
+    print_r($array);
+    echo "</pre>";
+    for($i=0;$i<count($array)/2;$i++){
+        $tmp=$array[$i];
+        $array[$i]=$array[count($array)-$i-1];
+        $array[count($array)-$i-1]=$tmp;
+    }
+    echo "<pre>";
+    print_r($array);
+    echo "</pre>";
     ?>
 
 </body>
