@@ -83,6 +83,10 @@
     echo "<pre>";
     print_r($num);
     echo "</pre>";
+    $fill= array_fill(0,10,"Hi");
+    echo "<pre>";
+    print_r($fill);
+    echo "</pre>";
     ?>
 </body>
 
