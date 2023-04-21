@@ -317,8 +317,19 @@
     echo "<pre>";
     print_r($game);
     echo "</pre>";
-    //
-
+    echo "<hr>";
+    //找出五百年內的閏年
+    echo "找出五百年內的閏年<br>";
+    $year500=[];
+    for($i=1;$i<=500;$i++){
+        if($i%4==0&&$i%100!=0||$i%400==0){
+            $year500[]=$i;
+        }
+    }
+    echo "<pre>";
+    print_r($year500);
+    echo "</pre>";
+    
     ?>
     
 </body>
