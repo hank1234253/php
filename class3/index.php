@@ -200,6 +200,50 @@
     echo "</pre>";
     //              名字    科別
     echo $students["judy"]["國文"];
+
+    $subjects=[
+        "國文"=>[
+            "judy"=>95,
+            "amo"=>88,
+            "john"=>45,
+            "peter"=>59,
+            "hebe"=>71
+        ],
+        "英文"=>[
+            "judy"=>64,
+            "amo"=>78,
+            "john"=>60,
+            "peter"=>32,
+            "hebe"=>62
+        ],
+        "數學"=>[
+            "judy"=>70,
+            "amo"=>54,
+            "john"=>68,
+            "peter"=>77,
+            "hebe"=>80
+        ],
+        "地理"=>[
+            "judy"=>90,
+            "amo"=>81,
+            "john"=>70,
+            "peter"=>54,
+            "hebe"=>62
+        ],
+        "歷史"=>[
+            "judy"=>84,
+            "amo"=>71,
+            "john"=>62,
+            "peter"=>42,
+            "hebe"=>64
+        ],
+    ];
+    echo "<pre>";
+    print_r($subjects);
+    echo "</pre>";
+    //              科別    名字
+    echo $subjects["國文"]["judy"];
+
     ?>
 </body>
 
