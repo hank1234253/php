@@ -87,6 +87,8 @@
     echo "<pre>";
     print_r($fill);
     echo "</pre>";
+
+    echo array_search("Hi",$fill);
     ?>
 </body>
 
