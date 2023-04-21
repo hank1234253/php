@@ -297,6 +297,7 @@
             $num2[$i][$j] = $i . " x " . $j . " = " . $i * $j;
         }
     }
+
     echo "一維<br>";
     echo "<pre>";
     print_r($num1);
@@ -342,7 +343,8 @@
     echo "<pre>";
     print_r($game);
     echo "</pre>";
-    foreach ($game as $value) {
+
+    foreach ($game as $k=> $value) {
         echo "<div class=\"game1\">$value</div>";
     }
     $tmp = rand(1, 8);
@@ -362,7 +364,7 @@
     echo "<hr>";
     //天干地支年
     echo "天干地支<br>";
-    $n=1026;
+    $n=2053;
     switch ($n % 10) {
         case '0':
             echo "庚";
@@ -433,11 +435,20 @@
             echo "未";
             break;
     }
+    echo "<br>";
+    $sky=["甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"];
+    $land=["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"];
+    $skyland=[];
+    for($i=0;$i<60;$i++){
+        $skyland[]=$sky[$i%10].$land[$i%12];
+    }
+    echo $skyland[($n-1024)%60];
+    
     echo "<hr>";
 
     //陣列元素反轉
     echo "陣列元素反轉";
-    $array=[1,2,3,4,5,6,7];
+    $array=[2,4,6,1,8];
     echo "<pre>";
     print_r($array);
     echo "</pre>";
