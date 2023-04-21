@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table,td{
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 
 <body>
@@ -243,6 +249,18 @@
     echo "</pre>";
     //              科別    名字
     echo $subjects["國文"]["judy"];
+    echo "<hr>";
+
+    echo "<table>";
+    echo "<tr><td></td><td>國文</td><td>英文</td><td>數學</td><td>地理</td><td>歷史</td>";
+    foreach ($students as $name => $scores) {
+        echo "<tr><td>$name</td>";
+        foreach($scores as $sub =>$sco){
+            echo "<td>$sco</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
 
     ?>
 </body>
