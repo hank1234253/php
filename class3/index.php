@@ -164,6 +164,7 @@
     echo "<hr>";
 
     //學生成績陣列
+    echo "學生成績陣列2種寫法";
     $students=[
         "judy"=>[
             "國文"=>95,
@@ -250,7 +251,8 @@
     //              科別    名字
     echo $subjects["國文"]["judy"];
     echo "<hr>";
-
+    //將陣列以表格方式列出
+    echo "將陣列以表格方式列出<br>";
     echo "<table>";
     echo "<tr><td></td><td>國文</td><td>英文</td><td>數學</td><td>地理</td><td>歷史</td>";
     foreach ($students as $name => $scores) {
@@ -261,8 +263,64 @@
         echo "</tr>";
     }
     echo "</table>";
+    echo "<hr>";
+    //陣列九九乘法表
+    echo "陣列九九乘法表<br>";
+    for($i=1;$i<10;$i++){
+        for($j=1;$j<10;$j++){
+            $num1[]=$i." x ".$j." = ".$i*$j;
+            $num2[$i][$j]=$i." x ".$j." = ".$i*$j;
+        }
+    }
+    echo "一維<br>";
+    echo "<pre>";
+    print_r($num1);
+    echo "</pre>";
+    echo "<table>";
+    foreach ($num1 as $k=> $value ){
+        if($k%9==0)
+            echo "<tr>";
+        echo "<td>";
+        echo $value;
+        echo "</td>";
+        if($k%9==8)
+            echo "</tr>";
+    }
+    echo "</table>";
+
+    echo "二維<br>";
+    echo "<pre>";
+    print_r($num2);
+    echo "</pre>";
+    echo "<table>";
+    foreach ($num2 as $i => $j) {
+        echo "<tr>";
+         foreach ($j as $k => $value) {
+            echo "<td>";
+            echo  $value." ";
+            echo "</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
+    echo "<hr>";
+    //威力彩選號
+    echo "威力彩選號<br>";
+    $game=[];
+    while(count($game)<6){
+        $tmp=rand(1,38); 
+        if(!in_array($tmp,$game)){
+            $game[]=$tmp;
+        }
+    }
+    sort($game);    
+    echo "<pre>";
+    print_r($game);
+    echo "</pre>";
+    //
 
     ?>
+    
 </body>
 
 </html>
