@@ -70,6 +70,19 @@
     }else{
         echo '不在陣列中';
     }
+
+    $num=['5','9','3','2'];
+    echo "<pre>";
+    print_r($num);
+    echo "</pre>";
+    sort($num);
+    echo "<pre>";
+    print_r($num);
+    echo "</pre>";
+    rsort($num);
+    echo "<pre>";
+    print_r($num);
+    echo "</pre>";
     ?>
 </body>
 
