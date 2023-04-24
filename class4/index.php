@@ -95,7 +95,9 @@ echo "<hr>";
 echo "<h3>練習 尋找字串與HTML、css整合應用</h3>";
 $str="學會PHP網頁程式設計，薪水會加倍，工作會好找";
 echo $str."<br>";
-$str=str_replace("程式設計","<div style=\"display:inline;font-size:30px;color:blue\">程式設計</div>",$str);
+$target="程式設計";
+$replace="<span style=\"font-size:30px;color:blue\">$target</span>";
+$str=str_replace($target,$replace,$str);
 echo $str;
 
 
