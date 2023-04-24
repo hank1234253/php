@@ -70,6 +70,34 @@ echo "<br>strlen<br>";
 echo strlen($str);
 echo "<br>mb_strlen<br>";
 echo mb_strlen($str);
+echo "<hr>";
+echo "<h3>練習 字串取代</h3>";
+$str="aaddw1123";
+echo $str."<br>";
+echo str_replace(['a','d','w',1,2,3],'*',$str)."<br>";
+echo str_repeat("*",strlen($str));
+echo "<hr>";
+echo "<h3>練習 字串分割</h3>";
+$str="this,is,a,book";
+$str=explode(",",$str);
+echo "<pre>";
+print_r($str);
+echo "</pre>";
+echo "<hr>";
+echo "<h3>練習 字串合併</h3>";
+echo implode(" ",$str);
+echo "<hr>";
+echo "<h3>練習 子字串取用</h3>";
+$str="The reason why a great man is great is that he resolves to be a great man";
+echo $str."<br>";
+echo substr($str,0,10)."...";
+echo "<hr>";
+echo "<h3>練習 尋找字串與HTML、css整合應用</h3>";
+$str="學會PHP網頁程式設計，薪水會加倍，工作會好找";
+echo $str."<br>";
+$str=str_replace("程式設計","<div style=\"display:inline;font-size:30px;color:blue\">程式設計</div>",$str);
+echo $str;
+
 
 ?>
 </body>
