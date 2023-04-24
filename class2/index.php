@@ -215,7 +215,20 @@
     echo "</table>";
     echo "<hr>";
     //while尋找字元
-    
+
+    $string = "this is test";
+    $word="e";
+    $found=false;
+    $i=0;
+    while(!$found&&$i<strlen($string)){
+        if($string[$i]==$word){
+            $found=true;
+            echo "找到了,位置在$i<br>";
+        }else $i++;
+    }
+    if(!$found){
+        echo "沒找到<br>";
+    }
     
     echo "<hr>";
     //三角
