@@ -59,6 +59,17 @@ echo "</pre>";
 echo implode("，",$str2);
 echo "<br>";
 echo join("，",$str2);
+echo "<hr>";
+$str="今天天氣很好";
+echo $str;
+echo "<br>strpos找天氣<br>";
+echo strpos($str,"天氣");
+echo "<br>mb_strpos找天氣<br>";
+echo mb_strpos($str,"天氣");
+echo "<br>strlen<br>";
+echo strlen($str);
+echo "<br>mb_strlen<br>";
+echo mb_strlen($str);
 
 ?>
 </body>
