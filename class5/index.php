@@ -47,24 +47,24 @@
     }
     echo "<hr>";
     
-    $f= date("w",strtotime(date("Y-n-1")));
-    $t= date("t");
-    $w=$f+$t;
-    $w=ceil($w/7);
-    $tmp=1;
+    $f= date("w",strtotime(date("Y-n-1"))); //這個月第一天星期幾
+    $t= date("t");  //這個月有幾天
+    $w=$f+$t;   
+    $w=ceil($w/7);  //這個月會有幾周
+    $tmp=1; //日期暫存
     echo "<table>";
     echo "<tr><td>日</td><td>一</td><td>二</td><td>三</td><td>四</td><td>五</td><td>六</td></tr>";
     for($i=0;$i<$w;$i++){
         echo "<tr>";
         for($j=0;$j<7;$j++){
             if($i==0&&$j<$f){
-                echo "<td></td>";
+                echo "<td></td>";//到這個月第一天之前填空
             }
             else if($tmp<=$t){
-                echo "<td>$tmp</td>";
-                $tmp++;
+                echo "<td>$tmp</td>";//之後開始印日期
+                $tmp++;//日期+1
             }else{
-                echo "<td></td>";
+                echo "<td></td>";//這個月最後一天後填空
             }
         }
         echo "</tr>";
