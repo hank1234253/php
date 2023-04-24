@@ -27,6 +27,30 @@ echo mb_substr($str,0,3);
 echo "<br>";
 echo mb_substr($str2,0,3);
 
+echo "<h3>中英混合取字串</h3>";
+$str="Today 真是個 good day";
+echo $str;
+echo "<br>";
+echo mb_substr($str,0,8);
+echo "<hr>";
+$str="   今天天氣真好  ";
+echo "<br>";
+echo $str;
+echo "<br>";
+echo trim($str);
+echo "<hr>";
+$str="YA";
+echo str_repeat($str,5);
+echo "<hr>";
+$str="今天天氣很好";
+echo $str;
+echo "<br>";
+echo str_replace("天氣","心情",$str);
+echo "<br>";
+echo $str;
+echo "<br>";
+echo str_replace(["天氣","很好"],["心情","很糟"],$str);
+
 ?>
 </body>
 </html>
