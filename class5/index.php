@@ -60,7 +60,7 @@
             if($i==0&&$j<$f){
                 echo "<td></td>";//到這個月第一天之前填空
             }
-            else if($tmp<=$t){
+            else if($tmp<=$t){//判斷到這個最後一天了嗎
                 echo "<td>$tmp</td>";//之後開始印日期
                 $tmp++;//日期+1
             }else{
