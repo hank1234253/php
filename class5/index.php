@@ -46,9 +46,9 @@
         echo date("Y-m-d l",strtotime("+$i week",strtotime("$week day")))."<br>";
     }
     echo "<hr>";
-    
-    $f= date("w",strtotime(date("Y-n-1"))); //這個月第一天星期幾
-    $t= date("t");  //這個月有幾天
+    $today=strtotime("now");//修改日期
+    $f= date("w",strtotime(date("Y-n-1",$today))); //這個月第一天星期幾
+    $t= date("t",$today);  //這個月有幾天
     $w=$f+$t;   
     $w=ceil($w/7);  //這個月會有幾周
     $tmp=1; //日期暫存
