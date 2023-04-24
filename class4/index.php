@@ -50,6 +50,15 @@ echo "<br>";
 echo $str;
 echo "<br>";
 echo str_replace(["天氣","很好"],["心情","很糟"],$str);
+echo "<hr>";
+echo $str="隨著 ChatGPT 盛起，現在也支援 OpenAI API，把你的 OpenAI key 放入之後，整頁翻譯、電子書翻譯都能用 OpenAI 來翻。";
+$str2=explode('，',$str);
+echo "<pre>";
+print_r($str2);
+echo "</pre>";
+echo implode("，",$str2);
+echo "<br>";
+echo join("，",$str2);
 
 ?>
 </body>
