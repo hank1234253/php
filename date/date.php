@@ -37,6 +37,13 @@
 <body>
     <div class="container">
     <?php
+    for($i=1;$i<=12;$i++){
+        $day = strtotime(date("Y-$i-1"));
+        $monthdays = date("t", $day);
+        for($j=1;$j<=$monthdays;$j++){
+            $days[$i][$j]=$j;
+        }
+    }
     for ($i = 1; $i <= 12; $i++) {
         $day = strtotime(date("Y-$i-1"));
         $monthdays = date("t", $day);
@@ -53,25 +60,19 @@
         for ($j = 0; $j < $week; $j++) {
             echo "<tr>";
             for ($k = 0; $k < 7; $k++) {
-                if ($j == 0 && $k < $first) {
+                if ($j == 0 && $k < $first||$tmp > $monthdays) {
                     if ($k == 0 || $k == 6) {
                         echo "<td class=\"weekend\"></td>";
                     } else {
                         echo "<td></td>";
                     }
-                } else if ($tmp <= $monthdays) {
+                } else{
                     if ($k == 0 || $k == 6) {
-                        echo "<td class=\"weekend\">$tmp</td>";
+                        echo "<td class=\"weekend\">".$days[$i][$tmp]."</td>";
                         $tmp++;
                     } else {
-                        echo "<td>$tmp</td>";
+                        echo "<td>".$days[$i][$tmp]."</td>";
                         $tmp++;
-                    }
-                } else {
-                    if ($k == 0 || $k == 6) {
-                        echo "<td class=\"weekend\"></td>";
-                    } else {
-                        echo "<td></td>";
                     }
                 }
             }
