@@ -20,6 +20,7 @@
         }
         else{
             header("location:index.php?error=請輸入帳號或密碼");
+            
         }
     ?>
 </body>
