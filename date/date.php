@@ -35,6 +35,9 @@
         .container>.today{
             background-color: lightgreen;
         }
+        .container>.weekend{
+            background-color: lightsalmon;
+        }
     </style>
 </head>
 
@@ -88,13 +91,13 @@
             <a href="date.php?year=<?= $nextYear ?>&month=<?= $nextMonth ?>"><?= $nextMonth ?>月</a>
         </div>
         <div class="container">
-            <div>日</div>
+            <div class="weekend">日</div>
             <div>一</div>
             <div>二</div>
             <div>三</div>
             <div>四</div>
             <div>五</div>
-            <div>六</div>
+            <div class="weekend">六</div>
 
 
             <?php
@@ -104,7 +107,12 @@
                     echo "<div class=\"today\">";
                     echo date("j", strtotime($months[$i]));
                     echo "</div>";
-                } else {
+                } else if($i%7==0||$i%7==6){
+                    echo "<div class=\"weekend\">";
+                    if ($months[$i] != '')
+                        echo date("j", strtotime($months[$i]));
+                    echo "</div>";
+                }else{
                     echo "<div>";
                     if ($months[$i] != '')
                         echo date("j", strtotime($months[$i]));
