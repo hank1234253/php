@@ -29,8 +29,10 @@
             echo "體重過輕";
         }
         echo "<br>";
+        echo "<a href=\"./index.php\">回上一頁</a>";
+    }else{
+        header("location:index.php?bmierror=請輸入身高及體重");
     }
-    echo "<a href=\"./index.html\">回上一頁</a>";
     ?>
 </body>
 
