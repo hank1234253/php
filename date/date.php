@@ -38,6 +38,21 @@
         .container>.weekend{
             background-color: lightsalmon;
         }
+        .month{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            margin:0 auto;
+            margin-top: 10px;
+        }
+        .month>a{
+            width: 40px;
+            margin: 0 5px;
+        }
+        .month>span{
+            width: 40px;
+            margin: 0 5px;
+        }
     </style>
 </head>
 
@@ -85,7 +100,7 @@
             <span><?= $year ?>年</span>
             <a href="date.php?year=<?= $year + 1 ?>&month=<?= $month ?>"><?= $year + 1 ?>年</a>
         </div>
-        <div style="text-align: center;">
+        <div class="month">
             <a href="date.php?year=<?= $lastYear ?>&month=<?= $lastMonth ?>"><?= $lastMonth ?>月</a>
             <span><?= $month ?>月</span>
             <a href="date.php?year=<?= $nextYear ?>&month=<?= $nextMonth ?>"><?= $nextMonth ?>月</a>
