@@ -116,9 +116,9 @@
 
 
             <?php
-
+            
             for ($i = 0; $i < count($months); $i++) {
-                if (date("Y-n-d") == $months[$i]) {
+                if (date("Y-n-j") == $months[$i]) {
                     echo "<div class=\"today\">";
                     echo date("j", strtotime($months[$i]));
                     echo "</div>";
